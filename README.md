@@ -5,7 +5,7 @@ May 20, 2020
 Bikeshare Udacity Project
 
 ### Description
-Describe what your project is about and what it does
+This project allows a user to see selected useful statistics about bikeshare data from a chosen city in the US, and also gives the user the option to view the raw data. 
 
 ### Files used
 Include the files used
