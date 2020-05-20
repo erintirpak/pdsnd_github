@@ -21,14 +21,14 @@ def get_filters():
     cities = ['chicago', 'new york city', 'washington']
     while city not in cities:
         city = input("Please enter the city you'd like to analyze (must be chicago, new york city, or washington)").lower()
-        
+
 
     # TO DO: get user input for month (all, january, february, ... , june)
     month = 'month'
     months = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
     while month not in months:
               month = input("Please enter the name of the month you'd like to analyze (from January through June, or 'all' to apply no month filter)").lower()
-               
+
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     day = 'day'
@@ -68,7 +68,7 @@ def load_data(city, month, day):
         # use the index of the months list to get the corresponding int
         months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month) + 1
-    
+
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
 
@@ -88,17 +88,17 @@ def time_stats(df):
 
     # TO DO: display the most common month
     commonth = df['month'].mode()[0]
-    print('most common month:', commonth)
+    print('most common month: {}'.format(commonth))
 
     # TO DO: display the most common day of week
     comweek = df['day_of_week'].mode()[0]
-    print('most common day of the week:', comweek)
+    print('most common day of the week: {}'.format(comweek))
 
     # TO DO: display the most common start hour
     #df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['hour'] = df['Start Time'].dt.hour
     comhour = df['hour'].mode()[0]
-    print('most common start hour:', comhour)
+    print('most common start hour: {}'.format(comhour))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -187,7 +187,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df, city)
-        
+
         lines = 'start'
         i = 0
         while lines != 'no':
